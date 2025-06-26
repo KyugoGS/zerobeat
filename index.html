@@ -1,0 +1,184 @@
+<!-- La declaración DOCTYPE define que este documento es de tipo HTML5 -->
+<!doctype html>
+<!-- La etiqueta <html> es el elemento raíz de la página. 'lang="es"' indica que el idioma principal es español -->
+<html lang="es">
+<head>
+    <!-- Define el conjunto de caracteres a UTF-8, que incluye casi todos los caracteres y símbolos -->
+    <meta charset="UTF-8" />
+    <!-- Configura el viewport para que la página sea responsiva y se vea bien en todos los dispositivos -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- El título que aparecerá en la pestaña del navegador -->
+    <title>Zero-Beat</title>
+    
+    <!-- Enlace al icono (favicon) que aparece en la pestaña del navegador -->
+    <link rel="icon" type="image/png" href="logo.png" />
+
+    <!-- Importación de fuentes personalizadas desde Google Fonts para una mejor estética -->
+    <link rel="preconnect" 2r 03ñ3t9 7  n24 w href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Enlace a nuestra hoja de estilos CSS principal -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Enlace a Font Awesome para usar su librería de iconos (como el teléfono, email, etc.) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- HEADER: Contiene el logo y la navegación principal. Es la cabecera de la página. -->
+    <header>
+        <!-- Un contenedor para centrar el contenido del header -->
+        <div class="container header-container">
+            <!-- El logo es un enlace que lleva al inicio de la página -->
+            <a href="#" class="logo">
+                <img src="logo.png" alt="Logo de Zero Beat Telecomunicaciones" />
+                <!-- Contenedor para el texto del logo -->
+                <div class="logo-text">
+                    <h1>ZERO-BEAT</h1>
+                    <span style="color: green;">comunicaciones</span><span style="color: black;"> & electrics</span>
+                </div>
+            </a>
+            
+            <!-- NAV: La sección de navegación principal -->
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <!-- Botón de menú "hamburguesa" que solo será visible en dispositivos móviles -->
+            <button class="menu-toggle" aria-label="Abrir menú">
+                <i class="fas fa-bars"></i> <!-- Icono de barras del menú -->
+            </button>
+        </div>
+    </header>
+
+    <!-- MAIN: El contenido principal de la página web -->
+    <main>
+        <!-- SECCIÓN HERO: Es la primera sección visualmente impactante que ve el usuario -->
+        <section id="hero">
+            <div class="hero-content">
+                <p class="hero-subtitle">Conectando tu mundo con lo que mas amas</p>
+                <!-- Botón de "Llamada a la acción" (CTA) que invita al usuario a hacer algo -->
+                <a href="#productos" class="cta-button">Ver Productos</a>
+            </div>
+        </section>
+
+        <!-- SECCIÓN NOSOTROS: Describe la empresa, su misión, visión y objeto -->
+        <section id="nosotros" class="container section-padding">
+            <div class="about-content fade-in"> <!-- 'fade-in' es una clase para la animación de JS -->
+                <!-- Texto principal sobre la empresa -->
+                <div class="about-text">
+                    <h2>Sobre Nosotros</h2>
+                    <p>
+                        Contamos con más de 30 años de experiencia en la rama de las telecomunicaciones y la eléctrica...
+                    </p>
+                </div>
+                <!-- Sección para Misión, Visión y Objeto -->
+                <div class="mision-vision">
+                    <article>
+                        <h3><i class="fas fa-bullseye"></i> Misión</h3>
+                        <p>Ofrecer soluciones integrales y confiables...</p>
+                    </article>
+                    <article>
+                        <h3><i class="fas fa-eye"></i> Visión</h3>
+                        <p>Ser la empresa líder en la región...</p>
+                    </article>
+                    <article>
+                        <h3><i class="fas fa-crosshairs"></i> Objeto</h3>
+                        <p>Proveer, instalar y mantener equipos y sistemas...</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN SERVICIOS: Muestra los servicios que ofrece la empresa -->
+        <section id="servicios" class="section-padding section-accent">
+            <div class="container">
+                <h2 class="section-title">Nuestros Servicios</h2>
+                <!-- Un layout de rejilla para organizar las tarjetas de servicios -->
+                <div class="grid-layout">
+                    <!-- Tarjeta individual para un servicio -->
+                    <div class="card fade-in">
+                        <div class="card-icon"><i class="fas fa-broadcast-tower"></i></div>
+                        <h3>Estaciones Repetidoras</h3>
+                        <p>Alquiler de antenas de telecomunicaciones...</p>
+                    </div>
+                    <div class="card fade-in">
+                        <div class="card-icon"><i class="fas fa-bolt"></i></div>
+                        <h3>Suplementos Eléctricos</h3>
+                        <p>Instalaciones eléctricas, herramientas...</p>
+                    </div>
+                    <div class="card fade-in">
+                        <div class="card-icon"><i class="fas fa-wifi"></i></div>
+                        <h3>Internet</h3>
+                        <p>Alquiler de sitios para nodos principales...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN PRODUCTOS: Muestra los productos en venta -->
+        <section id="productos" class="section-padding">
+            <div class="container">
+                <h2 class="section-title">Nuestros Productos</h2>
+                <div class="grid-layout product-grid">
+                    <!-- Tarjeta de producto -->
+                    <div class="card product-card fade-in">
+                        <img src="producto-radio.png" alt="Walkie Talkie">
+                        <h3>Walkie Talkies VHF/UHF</h3>
+                        <p>Equipos de comunicaciones en "VHF" y "UHF"...</p>
+                    </div>
+                    <div class="card product-card fade-in">
+                        <img src="producto-repuestos.png" alt="Repuestos para radios">
+                        <h3>Consumibles y Repuestos</h3>
+                        <p>Botones, antenas, baterías, cargadores...</p>
+                    </div>
+                    <div class="card product-card fade-in">
+                        <img src="productos-motorola.png" alt="Equipos Motorola">
+                        <h3>Línea Motorola</h3>
+                        <p>Equipos Motorola de la serie EP...</p>
+                    </div>
+                    <div class="card product-card fade-in">
+                        <img src="repetidora.png" alt="Repetidora de señal">
+                        <h3>Puntos de Repetición</h3>
+                        <p>Alquiler de repetidoras de VHF, UHF...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN CONTACTO: Información y formulario de contacto -->
+        <section id="contacto" class="section-padding section-accent">
+            <div class="container contact-container fade-in">
+                <!-- Columna con la información de contacto -->
+                <div class="contact-info">
+                    <h2 class="section-title">Contáctanos</h2>
+                    <p>¿Listo para llevar tus comunicaciones al siguiente nivel? ¡Hablemos!</p>
+                    <ul> 
+                        <li><i class="fas fa-phone"></i> <span>Teléfono:</span> <a href="tel:+58 416-9389424">+58 416-9389424</a> <a href="tel:+58 424-7550494">+58 424-7550494</a><a href="tel:+58 424-7550494">+58 424-7550494</a>
+                        <li><i class="fas fa-envelope"></i> <span>Email:</span> <a href="mailto: zerobeatlawyers@gmail.com"> zerobeatlawyers@gmail.com.com</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> <span>Dirección:</span> Urb Alto Viento, Carretera Principal, Vía Batallon - Rubio</li>
+                    </ul>
+                </div>
+                <!-- Columna para un futuro formulario o una imagen -->
+                <div class="contact-form-placeholder">
+                    <img src="logo.png" alt="Logo de Zero Beat">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER: El pie de página del sitio web -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Zero-Beat Comunicaciones S.A. | Diseñado por Akanme16 & Kyugo_GS</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT: Enlace al archivo JavaScript. Se coloca al final para que la página cargue más rápido. -->
+    <script src="script.js"></script>
+</body>
+</html>
