@@ -1,0 +1,346 @@
+/* --- ESTILOS GLOBALES --- */
+/* El selector universal '*' aplica estos estilos a TODOS los elementos */
+* {
+    margin: 0; /* Elimina márgenes exteriores por defecto */
+    padding: 0; /* Elimina rellenos interiores por defecto */
+    box-sizing: border-box; /* Hace que el padding y border no aumenten el tamaño total del elemento */
+}
+
+/* Estilos para el elemento raíz del documento */
+html {
+    scroll-behavior: smooth; /* Habilita un desplazamiento suave al hacer clic en enlaces internos (ej: #contacto) */
+    font-size: 16px; /* Establece el tamaño de fuente base para la web */
+}
+
+/* Estilos para el cuerpo del documento */
+body {
+    font-family: 'Roboto', sans-serif; /* Fuente por defecto para el texto */
+    line-height: 1.7; /* Espaciado entre líneas para mejor legibilidad */
+    color: #333; /* Color de texto principal */
+    background-color: #ffffff; /* Color de fondo principal */
+}
+
+/* Clase de contenedor para centrar el contenido y limitar su ancho máximo */
+.container {
+    width: 90%; /* Ocupa el 90% del ancho disponible */
+    max-width: 1200px; /* Pero nunca más de 1200px */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+}
+
+/* Estilos base para los encabezados */
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif; /* Fuente especial para los títulos */
+    font-weight: 600; /* Grosor de la fuente */
+    color: #1a4721; /* Color de los títulos */
+}
+
+/* Estilos para los enlaces (hipervínculos) */
+a {
+    text-decoration: none; /* Quita el subrayado por defecto */
+    color: #4CAF50; /* Color del enlace */
+    transition: color 0.3s ease; /* Transición suave para el cambio de color */
+}
+
+a:hover {
+    color: #113117; /* Color del enlace cuando el ratón está encima */
+}
+
+/* Estilos para todas las imágenes */
+img {
+    max-width: 100%; /* Asegura que las imágenes nunca se desborden de su contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+/* Clase de utilidad para añadir relleno vertical a las secciones */
+.section-padding {
+    padding: 6rem 0;
+}
+
+/* Estilo para los títulos de sección */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+/* Pequeña línea decorativa debajo de los títulos de sección */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 4px;
+    background: #4CAF50;
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+}
+
+/* Clase para secciones con un color de fondo alternativo */
+.section-accent {
+    background-color: #f8f9fa;
+}
+
+/* --- HEADER --- */
+header {
+    background: #ffffff;
+    padding: 1rem 0;
+    position: sticky; /* Hace que el header se quede fijo en la parte superior al hacer scroll */
+    top: 0;
+    z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+}
+
+.header-container {
+    display: flex; /* Activa Flexbox para alinear elementos horizontalmente */
+    justify-content: space-between; /* Distribuye los elementos: logo a la izquierda, nav a la derecha */
+    align-items: center; /* Centra los elementos verticalmente */
+}
+
+.logo {
+    font-family: roboto, sans-serif; /* Fuente para el logo */
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: #1a4721;
+}
+
+.logo img {
+    height: 80px;
+}
+
+.main-nav ul {
+    list-style: none; /* Quita los puntos de la lista */
+    display: flex;
+    gap: 2rem; /* Espacio entre los elementos del menú */
+}
+
+/* Estilo para los enlaces del menú */
+.main-nav a {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: #333;
+    position: relative; /* Necesario para el efecto de subrayado */
+    padding: 0.5rem 0;
+}
+
+/* Efecto de subrayado que aparece al pasar el ratón */
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0; /* Inicialmente no tiene ancho */
+    height: 2px;
+    background-color: #4CAF50;
+    transition: width 0.3s ease; /* Anima el cambio de ancho */
+}
+
+.main-nav a:hover::after {
+    width: 100%; /* Al pasar el ratón, el ancho se expande al 100% */
+}
+
+/* Botón de menú para móviles, oculto por defecto */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: #1a4721;
+    cursor: pointer;
+}
+
+/* --- HERO SECTION --- */
+#hero {
+    position: relative;
+    overflow: hidden;
+    height: 90vh; /* Ocupa el 90% de la altura de la pantalla */
+    /* Fondo con imagen y un degradado oscuro por encima para que el texto sea legible */
+    background: url('banner.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    text-align: center;
+    color: #ffffff;
+}
+
+#hero::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.478) 0%,
+        rgba(0, 0, 0, 0.444) 60%,
+        rgba(0, 0, 0, 0.566) 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content h2 {
+    font-size: clamp(2.5rem, 5vw, 4rem); /* Tamaño de fuente responsivo */
+    color: #ffffff;
+}
+
+.hero-subtitle {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #fff; /* O el color que prefieras */
+    font-weight: 400;
+}
+
+/* Botón de llamada a la acción */
+.cta-button {
+    background: #4CAF50;
+    color: #ffffff;
+    padding: 1rem 2.5rem;
+    border-radius: 50px; /* Bordes completamente redondeados */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #45a049;
+    transform: translateY(-3px); /* Efecto de "levantarse" */
+}
+
+/* --- ABOUT, SERVICES, PRODUCTS & CONTACT (Estilos comunes) --- */
+/* Layout de rejilla para organizar tarjetas */
+.grid-layout {
+    display: grid;
+    /* Crea columnas automáticas que tienen un mínimo de 300px */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* Estilo base para las tarjetas */
+.card {
+    background: #ffffff;
+    padding: 2.5rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px); /* La tarjeta se eleva al pasar el ratón */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon {
+    font-size: 3rem;
+    color: #4CAF50;
+    margin-bottom: 1.5rem;
+}
+
+.product-card img {
+    height: 150px;
+    object-fit: contain; /* Asegura que la imagen quepa sin deformarse */
+    margin-bottom: 1.5rem;
+}
+
+/* Estilos específicos de la sección "Nosotros" */
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
+    gap: 4rem;
+    align-items: center;
+}
+
+.mision-vision article {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 5px solid #4CAF50; /* Línea decorativa a la izquierda */
+}
+
+/* Estilos específicos de la sección "Contacto" */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.contact-info ul {
+    list-style: none;
+    margin-top: 2rem;
+}
+
+.contact-info li {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: #113117;
+    color: #ffffff;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+footer p {
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+/* --- ANIMATIONS --- */
+/* Estilos para la animación de aparición controlada por JS */
+.fade-in {
+    opacity: 0; /* Inicialmente invisible */
+    transform: translateY(30px); /* Inicialmente desplazado hacia abajo */
+    transition: opacity 0.8s ease, transform 0.8s ease; /* Transición suave */
+}
+/* Clase que se añade con JS cuando el elemento es visible */
+.fade-in.visible {
+    opacity: 1; /* Se vuelve visible */
+    transform: translateY(0); /* Vuelve a su posición original */
+}
+
+
+/* --- RESPONSIVE DESIGN (Media Queries) --- */
+/* Estilos para tablets y pantallas más pequeñas (hasta 992px de ancho) */
+@media (max-width: 992px) {
+    /* Las secciones de 2 columnas ahora tendrán 1 sola columna */
+    .about-content, .contact-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Estilos para móviles (hasta 768px de ancho) */
+@media (max-width: 768px) {
+    /* Oculta la navegación normal */
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #ffffff;
+    }
+    
+    /* Clase que se añade con JS para mostrar el menú móvil */
+    .main-nav.is-active {
+        display: block;
+    }
+
+    /* El menú móvil será una lista vertical */
+    .main-nav ul {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    /* Muestra el botón de hamburguesa */
+    .menu-toggle {
+        display: block;
+    }
+}
